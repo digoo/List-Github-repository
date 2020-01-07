@@ -1,68 +1,156 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# New comments made by me in portuguese
 
-## Available Scripts
+## Criando front com react
 
-In the project directory, you can run:
+### Na pasta root do projeto:
+> yarn create react-app <Nome do App front>
 
-### `npm start`
+> yarn add eslint -D
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> yarn eslint --init
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+###  `apagar o package-lock.json`
 
-### `npm test`
+## Pra atualizar o yarn.lock:
+> yarn
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
 
-### `npm run build`
+### Configurar
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## .prettierrc,
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+{
+  "singleQuote": true,
+  "trailingComma": "es5"
+}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+## .eslintrc.js,
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+module.exports = {
+  env: {
+    browser: true,
+    es6: true,
+  },
+  extends: [
+    'airbnb', 'prettier', 'prettier/react'
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+    'prettier',
+  ],
+  rules: {
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': [
+      'warn', {
+        extension: ['.jsx','.js'],
+      },
+    ],
+    'import/prefer-default-export': 'off',
+    'no-param-reassign': 'off',
+    'no-console': ["error", {allow: [ "tron" ] }]
+  },
+};
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## .editorconfig
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+root = true
 
-## Learn More
+[*]
+end_of_line = lf;
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Então executar:
+<!--
+> yarn add react-router-dom
 
-### Code Splitting
+`Opcional por enquanto:`
+> yarn start
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+> yarn add styled-components -->
 
-### Analyzing the Bundle Size
+> yarn add react-router-dom styled-components react-icons axios prop-types polished
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Iniciar o webserver:
+> yarn start
+<!--
+> yarn add axios
 
-### Making a Progressive Web App
+> yarn add prop-types
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+> yarn add polished -->
 
-### Advanced Configuration
+# Final package.json
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+{
+  "name": "module05",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.0",
+    "polished": "^3.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-icons": "^3.7.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.0",
+    "styled-components": "^4.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "prettier": "^1.18.2"
+  }
+}
+```
